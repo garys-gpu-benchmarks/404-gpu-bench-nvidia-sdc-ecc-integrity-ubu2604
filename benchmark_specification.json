@@ -37,7 +37,7 @@
   {
     "field_name": "Metrics",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "#1: Uncorrected ECC errors (uncorrected_ecc_errors_count); #2: Corrected ECC errors (corrected_ecc_errors_count); #3: Wall-clock time, s (test_wall_clock_completion_time_s); #4: Device buffer size, GiB (hbm3_coverage_gb); #5: Fixed-pattern fill/verify pass rate (fixed_pattern_fill_verify_pass_rate)"
+    "value": "#1: Uncorrected ECC errors (uncorrected_ecc_errors_count); #2: Corrected ECC errors (corrected_ecc_errors_count); #3: Wall-clock time, s (test_wall_clock_completion_time_s); #4: Device buffer size, GiB (device_buffer_gib); #5: Fixed-pattern fill/verify pass rate (fixed_pattern_fill_verify_pass_rate)"
   },
   {
     "field_name": "Command Tools Executed",
@@ -97,7 +97,7 @@
   {
     "field_name": "Raw Output Example",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "sample_index,status,uncorrected_ecc_errors_count,corrected_ecc_errors_count,uncorrected_ecc_aggregate_count,corrected_ecc_aggregate_count,uncorrected_ecc_nonzero_field_count,corrected_ecc_nonzero_field_count,hbm3_coverage_gb,fixed_pattern_fill_verify_pass_rate,test_wall_clock_completion_time_s,error_message\n0,ok,0,0,0,0,0,0,1.0,100,2.0,"
+    "value": "sample_index,status,uncorrected_ecc_errors_count,corrected_ecc_errors_count,uncorrected_ecc_aggregate_count,corrected_ecc_aggregate_count,uncorrected_ecc_nonzero_field_count,corrected_ecc_nonzero_field_count,device_buffer_gib,fixed_pattern_fill_verify_pass_rate,test_wall_clock_completion_time_s,error_message\n0,ok,0,0,0,0,0,0,1.0,100,2.0,"
   },
   {
     "field_name": "run_benchmark Command Plus Options for Smoke Run",
@@ -117,7 +117,7 @@
   {
     "field_name": "Output Fields / Metrics to Parse",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "uncorrected_ecc_errors_count, corrected_ecc_errors_count, uncorrected_ecc_aggregate_count, corrected_ecc_aggregate_count, uncorrected_ecc_nonzero_field_count, corrected_ecc_nonzero_field_count, hbm3_coverage_gb, fixed_pattern_fill_verify_pass_rate, test_wall_clock_completion_time_s"
+    "value": "uncorrected_ecc_errors_count, corrected_ecc_errors_count, uncorrected_ecc_aggregate_count, corrected_ecc_aggregate_count, uncorrected_ecc_nonzero_field_count, corrected_ecc_nonzero_field_count, device_buffer_gib, fixed_pattern_fill_verify_pass_rate, test_wall_clock_completion_time_s"
   },
   {
     "field_name": "Success Criteria",

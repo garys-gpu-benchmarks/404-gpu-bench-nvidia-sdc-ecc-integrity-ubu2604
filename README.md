@@ -93,7 +93,7 @@ Builds and runs bin/ecc_walk from src/ecc_walk.cu to walk a cudaMalloc buffer an
 - #1: Uncorrected ECC errors (uncorrected_ecc_errors_count); is present and physically sensible.
 - #2: Corrected ECC errors (corrected_ecc_errors_count); is present and physically sensible.
 - #3: Wall-clock time, s (test_wall_clock_completion_time_s); is present and physically sensible.
-- #4: Device buffer size, GiB (hbm3_coverage_gb); is present and physically sensible.
+- #4: Device buffer size, GiB (device_buffer_gib); is present and physically sensible.
 - #5: Fixed-pattern fill/verify pass rate (fixed_pattern_fill_verify_pass_rate) is present and physically sensible.
 
 ## 3. Metrics Captured
@@ -101,7 +101,7 @@ Builds and runs bin/ecc_walk from src/ecc_walk.cu to walk a cudaMalloc buffer an
 - **#1: Uncorrected ECC errors** — stored as `uncorrected_ecc_errors_count`.
 - **#2: Corrected ECC errors** — stored as `corrected_ecc_errors_count`.
 - **#3: Wall-clock time, s** — stored as `test_wall_clock_completion_time_s`.
-- **#4: Device buffer size, GiB** — stored as `hbm3_coverage_gb`.
+- **#4: Device buffer size, GiB** — stored as `device_buffer_gib`.
 - **#5: Fixed-pattern fill/verify pass rate** — stored as `fixed_pattern_fill_verify_pass_rate`.
 
 ## 4. Hardware Requirements
@@ -164,7 +164,7 @@ source ".venv/bin/activate"
 
 CSV aggregate of the ECC walk, written as sample_index 0 and 1
 
-sample_index,status,uncorrected_ecc_errors_count,corrected_ecc_errors_count,uncorrected_ecc_aggregate_count,corrected_ecc_aggregate_count,uncorrected_ecc_nonzero_field_count,corrected_ecc_nonzero_field_count,hbm3_coverage_gb,fixed_pattern_fill_verify_pass_rate,test_wall_clock_completion_time_s,error_message
+sample_index,status,uncorrected_ecc_errors_count,corrected_ecc_errors_count,uncorrected_ecc_aggregate_count,corrected_ecc_aggregate_count,uncorrected_ecc_nonzero_field_count,corrected_ecc_nonzero_field_count,device_buffer_gib,fixed_pattern_fill_verify_pass_rate,test_wall_clock_completion_time_s,error_message
 0,ok,0,0,0,0,0,0,1.0,100,2.0,
 
 ```bash
@@ -179,7 +179,7 @@ Consolidated metrics from the most recent run — suitable for CI artifact uploa
 
 CSV aggregate of the ECC walk, written as sample_index 0 and 1
 
-sample_index,status,uncorrected_ecc_errors_count,corrected_ecc_errors_count,uncorrected_ecc_aggregate_count,corrected_ecc_aggregate_count,uncorrected_ecc_nonzero_field_count,corrected_ecc_nonzero_field_count,hbm3_coverage_gb,fixed_pattern_fill_verify_pass_rate,test_wall_clock_completion_time_s,error_message
+sample_index,status,uncorrected_ecc_errors_count,corrected_ecc_errors_count,uncorrected_ecc_aggregate_count,corrected_ecc_aggregate_count,uncorrected_ecc_nonzero_field_count,corrected_ecc_nonzero_field_count,device_buffer_gib,fixed_pattern_fill_verify_pass_rate,test_wall_clock_completion_time_s,error_message
 0,ok,0,0,0,0,0,0,1.0,100,2.0,
 
 ## 9. Baselines / Thresholds
@@ -192,7 +192,7 @@ Expected ranges and gates live in `config/benchmark_config.yaml` under `baseline
 Create cannot finish without `scripts/collect_workload.py`.
 
 **`self_check` overlay rewritten**
-Do not overwrite files listed in `results/overlay_lock.json`.
+`Locked overlay rewritten` means the sibling file and the `sha256` in `results/overlay_lock.json` disagree. The repair is to make `implementation_components/<component-id>/files/<path>`, the sibling path, and that digest the same bytes, then recheck with `create_one_workload.py --validate-only`. Do not replace the overlay with a new collector, and do not regenerate a non-empty sibling.
 
 **Remote SSH drop during setup**
 Reconnect and resume `bash setup.sh --assume-yes`. Do not wipe `.venv` or `.cache`.

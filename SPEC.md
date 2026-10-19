@@ -28,7 +28,7 @@ Compile src/ecc_walk.cu with nvcc; run bin/ecc_walk; query nvidia-smi -q -d ECC
 
 CSV aggregate of the ECC walk, written as sample_index 0 and 1
 
-sample_index,status,uncorrected_ecc_errors_count,corrected_ecc_errors_count,uncorrected_ecc_aggregate_count,corrected_ecc_aggregate_count,uncorrected_ecc_nonzero_field_count,corrected_ecc_nonzero_field_count,hbm3_coverage_gb,fixed_pattern_fill_verify_pass_rate,test_wall_clock_completion_time_s,error_message
+sample_index,status,uncorrected_ecc_errors_count,corrected_ecc_errors_count,uncorrected_ecc_aggregate_count,corrected_ecc_aggregate_count,uncorrected_ecc_nonzero_field_count,corrected_ecc_nonzero_field_count,device_buffer_gib,fixed_pattern_fill_verify_pass_rate,test_wall_clock_completion_time_s,error_message
 0,ok,0,0,0,0,0,0,1.0,100,2.0,
 
 ## Metrics
@@ -36,7 +36,7 @@ sample_index,status,uncorrected_ecc_errors_count,corrected_ecc_errors_count,unco
 - **#1: Uncorrected ECC errors** — stored as `uncorrected_ecc_errors_count`.
 - **#2: Corrected ECC errors** — stored as `corrected_ecc_errors_count`.
 - **#3: Wall-clock time, s** — stored as `test_wall_clock_completion_time_s`.
-- **#4: Device buffer size, GiB** — stored as `hbm3_coverage_gb`.
+- **#4: Device buffer size, GiB** — stored as `device_buffer_gib`.
 - **#5: Fixed-pattern fill/verify pass rate** — stored as `fixed_pattern_fill_verify_pass_rate`.
 
 ## Framework
@@ -84,7 +84,7 @@ BENCHMARK_DB=tests/fixtures/benchmark.db \
 
 CSV aggregate of the ECC walk, written as sample_index 0 and 1
 
-sample_index,status,uncorrected_ecc_errors_count,corrected_ecc_errors_count,uncorrected_ecc_aggregate_count,corrected_ecc_aggregate_count,uncorrected_ecc_nonzero_field_count,corrected_ecc_nonzero_field_count,hbm3_coverage_gb,fixed_pattern_fill_verify_pass_rate,test_wall_clock_completion_time_s,error_message
+sample_index,status,uncorrected_ecc_errors_count,corrected_ecc_errors_count,uncorrected_ecc_aggregate_count,corrected_ecc_aggregate_count,uncorrected_ecc_nonzero_field_count,corrected_ecc_nonzero_field_count,device_buffer_gib,fixed_pattern_fill_verify_pass_rate,test_wall_clock_completion_time_s,error_message
 0,ok,0,0,0,0,0,0,1.0,100,2.0,
 
 ```bash
