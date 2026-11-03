@@ -85,7 +85,7 @@ Three operator scripts from [`garys-gpu-benchmarks/gpu-bench-suite`](https://git
 
 ## 1. Overview
 
-Builds and runs bin/ecc_walk from src/ecc_walk.cu to walk a cudaMalloc buffer and query nvidia-smi ECC text. device_id: CUDA device index. memory_size: allocation size in GB. num_iterations: verify loops. Sweep dimensions: device_id, memory_size, pattern_type, ecc_check, num_iterations, output_format, duration, count.
+Builds and runs bin/ecc_walk from src/ecc_walk.cu to walk a cudaMalloc buffer and query nvidia-smi ECC text. device_id: CUDA device index. memory_size: allocation size in GB. num_iterations: verify loops. Sweep dimensions: device_id, memory_size, pattern_type, num_iterations, duration.
 
 ## 2. What It Validates
 
