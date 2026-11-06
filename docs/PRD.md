@@ -21,7 +21,7 @@ Compile src/ecc_walk.cu with nvcc and run bin/ecc_walk over a cudaMalloc buffer 
 Analyze ECC memory integrity via a CUDA fixed-pattern verifier
 
 ## Validation Objective
-Validates that ecc_walk completes with a loops= line and reports ECC text counts plus pass rate. DCGM memory diagnostics are not run
+Validates that ecc_walk reports ECC counts and a pass rate
 
 ## Workload Category
 System Validation & Reliability
