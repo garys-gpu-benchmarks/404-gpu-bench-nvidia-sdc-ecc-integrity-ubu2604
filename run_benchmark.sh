@@ -16,11 +16,11 @@ capture_benchmark_run_command_submitted "$@"
 
 usage() {
   cat <<'USAGE'
+
 Usage: bash run_benchmark.sh [OPTIONS]
 
 Workload Name:          Silent Data Corruption (SDC).
 Main Goal:              Analyze ECC memory integrity via a CUDA fixed-pattern verifier.
-Validation Objective:   Validates that ecc_walk reports ECC counts and a pass rate.
 Command Tools Executed: Compile src/ecc_walk.cu with nvcc; run bin/ecc_walk; query nvidia-smi -q -d
                         ECC.
 
