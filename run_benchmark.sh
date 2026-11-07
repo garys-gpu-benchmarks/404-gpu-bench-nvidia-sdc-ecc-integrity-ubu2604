@@ -34,7 +34,10 @@ Parameters (override the profile's value):
   --memory-size <value>         Shared workload parameter (smoke/baseline/extended: 1)
   --pattern-type <value>        Shared workload parameter (smoke/baseline/extended: walking-1s)
   --num-iterations <n>          Number of timed repetitions (smoke 2, baseline 3, extended 9)
-  --duration <n>                Wall-clock or sampling duration (smoke 20000, baseline 183000, extended 730000)
+  --duration <n>                Wall-clock or sampling duration
+                                  smoke:    20000
+                                  baseline: 183000
+                                  extended: 730000
 
 General options:
   --config <file>               Config file (default: config/benchmark_config.yaml)
