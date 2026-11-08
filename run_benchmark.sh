@@ -19,10 +19,10 @@ usage() {
 
 Usage: bash run_benchmark.sh [OPTIONS]
 
-Workload Name:          Silent Data Corruption (SDC).
-Main Goal:              Analyze ECC memory integrity via a CUDA fixed-pattern verifier.
+Workload Name:          Silent Data Corruption (SDC)
+Main Goal:              Analyze ECC memory integrity via a CUDA fixed-pattern verifier
 Command Tools Executed: Compile src/ecc_walk.cu with nvcc; run bin/ecc_walk; query nvidia-smi -q -d
-                        ECC.
+                        ECC
 
 Profiles (default: --smoke):
   --smoke                       Run smoke profile
