@@ -40,6 +40,11 @@
     "value": "Compile src/ecc_walk.cu with nvcc; run bin/ecc_walk; query nvidia-smi -q -d ECC"
   },
   {
+    "field_name": "Execution Description With Parameters",
+    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
+    "value": "Builds and runs bin/ecc_walk from src/ecc_walk.cu to walk a cudaMalloc buffer and query nvidia-smi ECC text. device_id: CUDA device index. memory_size: allocation size in GB. num_iterations: verify loops. duration: wall-clock cap (collector converts ms yaml values to seconds). pattern_type is documented but the binary alternates 0x1 / 0xFFFFFFFF. ecc_check reads nvidia-smi -q -d ECC; DCGM is not used. count and seed are yaml fields"
+  },
+  {
     "field_name": "Metrics",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "#1: Uncorrected ECC errors (uncorrected_ecc_errors_count); #2: Corrected ECC errors (corrected_ecc_errors_count); #3: Wall-clock time, s (test_wall_clock_completion_time_s); #4: Device buffer size, GiB (device_buffer_gib); #5: Fixed-pattern fill/verify pass rate (fixed_pattern_fill_verify_pass_rate)"
@@ -173,11 +178,6 @@
     "field_name": "Command Methodology",
     "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
     "value": "Compile src/ecc_walk.cu and run bin/ecc_walk, writing and verifying fills 0x00000001 and 0xFFFFFFFF until the iteration or duration cap, then count Correctable and Uncorrectable tokens from nvidia-smi -q -d ECC. DCGM is not called"
-  },
-  {
-    "field_name": "Execution Description With Parameters",
-    "source_file": "BenchmarkSpecDefinitions.xlsx::Workload_Definitions",
-    "value": "Builds and runs bin/ecc_walk from src/ecc_walk.cu to walk a cudaMalloc buffer and query nvidia-smi ECC text. device_id: CUDA device index. memory_size: allocation size in GB. num_iterations: verify loops. duration: wall-clock cap (collector converts ms yaml values to seconds). pattern_type is documented but the binary alternates 0x1 / 0xFFFFFFFF. ecc_check reads nvidia-smi -q -d ECC; DCGM is not used. count and seed are yaml fields"
   },
   {
     "field_name": "Execution Domain",
